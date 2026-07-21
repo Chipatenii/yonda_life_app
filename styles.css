@@ -148,6 +148,7 @@ body.nav-open .nav-links{ display:flex }
 
 /* -------- Two column layout -------- */
 .two-column{display:grid; grid-template-columns:1fr; gap:20px}
+.two-column > aside{align-self:start}
 .aside-sticky{position:static}
 
 /* -------- Forms -------- */
@@ -262,6 +263,94 @@ body.nav-open .nav-links{ display:flex }
   .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
   .two-column{grid-template-columns:1fr 340px}
   .aside-sticky{position:sticky; top:90px}
+}
+
+/* ============================================================
+   Content components (v6.7.0) — About & Learn pages
+   ============================================================ */
+.section--soft{background:var(--bg-soft)}
+.lead{font-size:18px; line-height:1.65; color:var(--text); max-width:720px; margin:0 0 8px}
+.stack > * + *{margin-top:14px}
+
+/* Feature / pillar cards */
+.feature{padding:20px}
+.feature-icon{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:52px; height:52px; border-radius:14px;
+  background:var(--green-50); font-size:26px; margin-bottom:12px;
+}
+.feature h3{margin:0 0 6px; font-size:18px; color:var(--ink); font-weight:800}
+.feature p{margin:0; color:var(--muted)}
+
+/* Stats band */
+.stats{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.stat{text-align:center; padding:12px}
+.stat-num{display:block; font-size:30px; font-weight:800; color:var(--green-800); line-height:1.1}
+.stat-label{display:block; margin-top:4px; font-size:14px; color:var(--muted)}
+
+/* Quote / testimonial cards */
+.quote-card{padding:20px; display:flex; flex-direction:column; gap:14px}
+.quote-text{margin:0; font-size:16px; line-height:1.6; color:var(--text)}
+.quote-text::before{content:"\201C"; color:var(--green-600); font-size:34px; line-height:0; vertical-align:-8px; margin-right:2px}
+.quote-meta{display:flex; align-items:center; gap:12px; margin-top:auto}
+.quote-avatar{
+  width:44px; height:44px; border-radius:999px; flex:0 0 44px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--green-700); color:#fff; font-weight:800; font-size:16px;
+}
+.quote-name{font-weight:700; color:var(--ink)}
+.quote-role{font-size:13px; color:var(--muted)}
+
+/* Article cards */
+.thumb{aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; font-size:44px; color:#fff}
+.thumb--a{background:#3f7a2b}
+.thumb--b{background:#4f9a86}
+.thumb--c{background:#8a9a3c}
+.thumb--d{background:#5a9636}
+.card-excerpt{margin:0 14px 14px; color:var(--muted); font-size:14.5px}
+.card-link{display:inline-block; margin:0 14px 16px; font-weight:700; color:var(--green-800); text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.card-link::after{content:" \2192"}
+
+/* Topic pills */
+.pill-list{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none}
+.pill-list li{
+  padding:8px 14px; border-radius:999px; background:var(--tag-bg); color:var(--tag-text);
+  font-size:14px; font-weight:600;
+}
+
+/* Numbered "try this" steps */
+.steps{list-style:none; counter-reset:step; margin:0; padding:0}
+.steps li{position:relative; padding:0 0 16px 46px; counter-increment:step; color:var(--muted)}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{
+  content:counter(step); position:absolute; left:0; top:-2px;
+  width:32px; height:32px; border-radius:999px; background:var(--green-700); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px;
+}
+.steps li strong{display:block; color:var(--ink); margin-bottom:2px}
+
+/* Value list */
+.value-list{margin:0; padding-left:20px; color:var(--muted)}
+.value-list li{margin:8px 0}
+
+/* CTA band */
+.cta{background:var(--green-700); color:#fff; border-radius:var(--radius-lg); padding:28px 20px; text-align:center}
+.cta h2{margin:0 0 8px; color:#fff; font-size:24px; font-weight:800}
+.cta p{margin:0 auto 18px; color:#eaf3e1; max-width:560px}
+.cta-actions{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
+.cta .btn-primary{background:#fff; color:var(--green-800); border-color:#fff}
+.cta .btn-primary:hover{background:var(--green-50); border-color:var(--green-50)}
+.cta .btn-outline{background:transparent; color:#fff; border-color:rgba(255,255,255,.7)}
+.cta .btn-outline:hover{background:rgba(255,255,255,.14); border-color:#fff}
+
+@media (min-width:600px){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .cta{padding:40px}
+  .cta h2{font-size:28px}
+}
+@media (min-width:960px){
+  .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
 }
 
 /* -------- Reduced motion -------- */
