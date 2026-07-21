@@ -3,10 +3,21 @@
   const price=window.yondaPrice;
   const esc=window.yondaEscape;
 
+  function isMobileMoney(method){ return method==='mtn'||method==='airtel'; }
+
   function methodMessage(method){
+    if(method==='paypal') return 'Order placed. You will be redirected to PayPal to complete payment.';
+    if(method==='amex') return 'Order placed. You will be redirected to a secure American Express payment page.';
     if(method==='card') return 'Order placed. You will be redirected to a secure card payment page.';
     if(method==='airtel') return 'Order placed. Check your phone for the Airtel Money prompt to approve payment.';
     return 'Order placed. Check your phone for the MTN Mobile Money prompt to approve payment.';
+  }
+
+  function methodHint(method){
+    if(isMobileMoney(method)) return 'You will receive a Mobile Money prompt to approve the payment on your phone.';
+    if(method==='paypal') return 'You will be redirected to PayPal to complete your payment.';
+    if(method==='amex') return 'You will be redirected to a secure American Express card page.';
+    return 'You will be redirected to a secure card page.';
   }
 
   function renderSummary(){
@@ -40,7 +51,7 @@
     if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){ errors.push('Please enter a valid email address.'); email&&email.classList.add('input-error'); }
 
     const method=selectedMethod();
-    if(method==='mtn'||method==='airtel'){
+    if(isMobileMoney(method)){
       const digits=(phone&&phone.value||'').replace(/\D/g,'');
       if(digits.length<9){ errors.push('Enter the phone number registered for Mobile Money.'); phone&&phone.classList.add('input-error'); }
     }
@@ -50,10 +61,7 @@
   function bind(){
     const hint=document.getElementById('method-hint');
     document.querySelectorAll('input[name="co-method"]').forEach(r=>r.addEventListener('change',()=>{
-      const v=selectedMethod();
-      if(hint) hint.textContent = v==='card'
-        ? 'You will be redirected to a secure card page.'
-        : 'You will receive a Mobile Money prompt to approve the payment on your phone.';
+      if(hint) hint.textContent = methodHint(selectedMethod());
     }));
 
     const btn=document.getElementById('btn-place');
