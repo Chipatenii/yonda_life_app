@@ -3,12 +3,24 @@
   const price=window.yondaPrice;
   const esc=window.yondaEscape;
 
+  const COVERS={
+    course:{cls:'course', emoji:'📚'},
+    ebook: {cls:'ebook',  emoji:'📖'},
+    book:  {cls:'book',   emoji:'📗'}
+  };
   function card(p){
-    const el=document.createElement('div'); el.className='card';
-    el.innerHTML=`<div class="card-tag">${esc(p.format||p.type)}</div>
-      <h3 class="card-title">${esc(p.title)}</h3>
-      <p class="card-body">Price: <strong>${price(p.price)}</strong></p>
-      <div class="card-body"><button class="btn btn-primary" data-add="${esc(p.id)}">Add to Cart</button></div>`;
+    const cover=COVERS[p.type]||{cls:'book', emoji:'📗'};
+    const el=document.createElement('article'); el.className='card product-card';
+    el.innerHTML=`<div class="product-cover product-cover--${cover.cls}"><span class="product-emoji" aria-hidden="true">${cover.emoji}</span></div>
+      <div class="product-info">
+        <span class="card-tag">${esc(p.format||p.type)}</span>
+        <h3 class="product-title">${esc(p.title)}</h3>
+        ${p.blurb?`<p class="product-blurb">${esc(p.blurb)}</p>`:''}
+        <div class="product-foot">
+          <span class="product-price">${price(p.price)}</span>
+          <button class="btn btn-primary btn-block" data-add="${esc(p.id)}">Add to Cart</button>
+        </div>
+      </div>`;
     return el;
   }
   function flash(btn){
