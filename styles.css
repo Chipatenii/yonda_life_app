@@ -213,18 +213,39 @@ body.nav-open .nav-links{ display:flex }
 .info-card .info-text{ margin:0; color:var(--muted); line-height:1.45 }
 
 /* -------- Footer -------- */
-.site-footer{margin-top:24px; background:#0e120d; color:#e9eee9; border-top:1px solid #1c1f1c}
-.site-footer a{color:#b6e5a2; text-decoration:none}
-.site-footer a:hover{text-decoration:underline}
-.site-footer .footer-top{padding:24px 0}
-.site-footer .footer-bottom{padding:12px 0; border-top:1px solid #1c1f1c; font-size:13px; line-height:1.4; color:#cfd8cf}
-.site-footer .footer-grid{display:grid; grid-template-columns:1fr; gap:20px}
-.site-footer .footer-brand{display:flex; gap:12px; align-items:flex-start}
-.site-footer .footer-brand img{width:40px; height:40px; object-fit:contain}
-.site-footer .footer-brand h4{margin:0; font-size:16px; line-height:1.25; color:#fff}
-.site-footer .footer-brand p{margin:2px 0 0; font-size:14px; line-height:1.35; color:#dce5dc}
-.site-footer .footer-contact strong{display:block; margin-bottom:6px; font-size:14px; color:#fff}
-.site-footer .footer-contact div{margin:3px 0; font-size:14px; line-height:1.4; color:#dce5dc}
+.site-footer{margin-top:32px; background:#0e120d; color:#cfd8cf; border-top:1px solid #1c1f1c}
+.site-footer a{color:#c9d6c6; text-decoration:none; transition:color .15s}
+.site-footer a:hover{color:#e6f5dd; text-decoration:underline}
+.site-footer .footer-top{padding:36px 0 28px}
+.site-footer .footer-grid{display:grid; grid-template-columns:1fr; gap:28px}
+
+/* Brand column */
+.footer-brand-head{display:flex; gap:12px; align-items:center}
+.site-footer .footer-brand img{width:44px; height:44px; object-fit:contain}
+.site-footer .footer-brand h4{margin:0; font-size:18px; line-height:1.2; color:#fff}
+.site-footer .footer-brand p{margin:2px 0 0; font-size:14px; color:#9fae9d}
+.footer-blurb{margin:14px 0 0; font-size:14px; line-height:1.55; color:#9fae9d; max-width:380px}
+
+/* Social */
+.footer-social{display:flex; gap:10px; margin-top:18px}
+.footer-social a{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:10px;
+  background:#1a1f18; color:#cfe8c1; border:1px solid #28311f;
+  transition:background-color .15s, border-color .15s, color .15s, transform .15s;
+}
+.footer-social a:hover{background:var(--green-700); border-color:var(--green-700); color:#fff; transform:translateY(-2px); text-decoration:none}
+.footer-social svg{width:20px; height:20px; fill:currentColor}
+
+/* Link columns */
+.footer-heading{margin:0 0 14px; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:#fff; font-weight:800}
+.footer-links{list-style:none; margin:0; padding:0}
+.footer-links li{margin:9px 0; font-size:14.5px; line-height:1.4; color:#9fae9d}
+.footer-links li svg{width:16px; height:16px; vertical-align:-3px; margin-right:8px; stroke:#7f8f7d; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round}
+
+/* Bottom bar */
+.site-footer .footer-bottom{padding:16px 0; border-top:1px solid #1c1f1c; font-size:13px; line-height:1.5; color:#8a958a}
+.footer-bottom-inner{display:flex; justify-content:space-between; gap:8px 20px; flex-wrap:wrap}
 
 /* -------- A11y -------- */
 .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
@@ -240,7 +261,7 @@ body.nav-open .nav-links{ display:flex }
   .hero-title{font-size:38px}
   .grid{gap:20px; grid-template-columns:repeat(2,minmax(0,1fr))}
   .form-grid-2{grid-template-columns:1fr 1fr}
-  .site-footer .footer-grid{grid-template-columns:1.5fr 1fr; align-items:center}
+  .site-footer .footer-grid{grid-template-columns:1fr 1fr; gap:32px}
 }
 
 /* ============================================================
@@ -263,6 +284,7 @@ body.nav-open .nav-links{ display:flex }
   .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
   .two-column{grid-template-columns:1fr 340px}
   .aside-sticky{position:sticky; top:90px}
+  .site-footer .footer-grid{grid-template-columns:1.7fr 1fr 1.2fr; gap:40px}
 }
 
 /* ============================================================
