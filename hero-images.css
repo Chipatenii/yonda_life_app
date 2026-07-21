@@ -1,0 +1,7 @@
+
+body.page-home .hero{background-image:image-set(url('images/hero-wellness-home.webp') type('image/webp'), url('images/hero-wellness-home.jpg') type('image/jpeg'));}
+body.page-about .hero{background-image:image-set(url('images/hero-wellness-about.webp') type('image/webp'), url('images/hero-wellness-about.jpg') type('image/jpeg'));}
+body.page-learn .hero{background-image:image-set(url('images/hero-wellness-learn.webp') type('image/webp'), url('images/hero-wellness-learn.jpg') type('image/jpeg'));}
+body.page-store .hero{background-image:image-set(url('images/hero-wellness-store.webp') type('image/webp'), url('images/hero-wellness-store.jpg') type('image/jpeg'));}
+body.page-cart .hero{background-image:image-set(url('images/hero-wellness-cart.webp') type('image/webp'), url('images/hero-wellness-cart.jpg') type('image/jpeg'));}
+body.page-checkout .hero{background-image:image-set(url('images/hero-wellness-checkout.webp') type('image/webp'), url('images/hero-wellness-checkout.jpg') type('image/jpeg'));}
