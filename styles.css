@@ -163,3 +163,40 @@ body, .card-body, .section-heading{ color: var(--text); }
   }
   body.nav-open .nav-links{ display:flex; flex-wrap:wrap; }
 }
+
+
+/* v6.5.0 — Store filters, cart/checkout rows, and form validation */
+
+/* Active store filter */
+.btn[data-filter][aria-pressed="true"]{
+  color:#103610;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.62), rgba(255,255,255,0)),
+    linear-gradient(180deg, #ACE57F, #7FBE45);
+  border:1px solid #78b63f;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55);
+}
+
+/* Add-to-cart confirmation state */
+.btn-added{ filter:brightness(1.05); cursor:default; }
+
+/* Cart line items */
+.cart-row{ padding:12px; margin-bottom:8px; }
+.qty-input{
+  width:70px; margin:0 6px; padding:6px 8px;
+  background:#fbfff7; border:1px solid #cddfc6; border-radius:8px; font-size:15px;
+}
+.qty-input:focus{ outline:0; border-color:#7fbf45; box-shadow:0 0 0 3px rgba(139,195,74,.22); }
+.cart-remove{ float:right; padding:8px 12px; }
+
+/* Order summary rows (cart + checkout) */
+.summary-row{ display:flex; justify-content:space-between; }
+.summary-line{ display:flex; justify-content:space-between; margin:6px 0; }
+
+/* Form validation feedback */
+.input-error{ border-color:#d64545 !important; box-shadow:0 0 0 3px rgba(214,69,69,.18) !important; }
+.form-error{
+  margin:0 0 .8rem; padding:10px 12px;
+  background:#fdecec; border:1px solid #f3b4b4; border-radius:10px;
+  color:#8a1f1f; font-size:14px; line-height:1.4;
+}
