@@ -2,9 +2,9 @@
 window.YONDA_PRODUCTS=[
   // Courses
   {id:'c1', type:'course', format:'Course', title:'Sustainable Weight Loss 101', price:599.00,
-   blurb:'Build lasting habits around food and movement — no crash diets, no guilt.'},
+   blurb:'Build lasting habits around food and movement, with no crash diets and no guilt.'},
   {id:'c2', type:'course', format:'Course', title:'Productivity & Mental Wellness Mastery', price:549.00,
-   blurb:'Focus, energy, and calm — a practical system for a fuller, less frantic week.'},
+   blurb:'Focus, energy, and calm: a practical system for a fuller, less frantic week.'},
   {id:'c3', type:'course', format:'Course', title:'Financial Freedom Foundations', price:649.00,
    blurb:'Budgeting, saving, and growing money with confidence, one clear step at a time.'},
   {id:'c4', type:'course', format:'Course', title:'The 30-Day Habit Reset', price:499.00,
@@ -12,7 +12,7 @@ window.YONDA_PRODUCTS=[
 
   // eBooks
   {id:'e1', type:'ebook', format:'eBook', title:'Healing Your Mind for a Healthier Body', price:129.00,
-   blurb:'How mindset shapes wellbeing — and gentle tools to shift it.'},
+   blurb:'How mindset shapes wellbeing, and the gentle tools to shift it.'},
   {id:'e2', type:'ebook', format:'eBook', title:'Mindful Eating & Lifestyle Habits', price:99.00,
    blurb:'Slow down, listen to your body, and rebuild your relationship with food.'},
   {id:'e3', type:'ebook', format:'eBook', title:'The Calm Morning Blueprint', price:89.00,
